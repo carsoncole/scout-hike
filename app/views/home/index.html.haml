@@ -48,13 +48,7 @@
                 .legend miles
 
 
-  .action
-    - if signed_in?
-      = button_to "Log a Hike", new_trek_path, method: :get, class: 'btn btn-lg btn-secondary'
-    - else
-      = button_to "Sign Up", sign_up_path, method: :get, class: 'btn btn-lg btn-secondary'
-      %br
-      = link_to "Sign In", sign_in_path, method: :get
+  = render 'take_action'
 
 
 
