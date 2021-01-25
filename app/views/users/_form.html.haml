@@ -1,5 +1,13 @@
+- if @user.errors.any?
+  #error_explanation
+    .message= "Ouch! Some bad stuff stopped me from creating your account:"
+    %ul
+      - @user.errors.full_messages.each do |message|
+        %li= message
+
 .form-group
   = form.label :screenname
+  %small.text-muted This is what others will see on the Leaderboard
   = form.text_field :screenname, class: 'form-control'
 
 .form-group

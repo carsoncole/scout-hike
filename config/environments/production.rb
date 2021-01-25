@@ -66,6 +66,20 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { host: 'https://scout-hike.herokuapp.com' }
+
+  config.action_mailer.asset_host = 'https://scout-hike.herokuapp.com'
+  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp #:letter_opener #
+  config.action_mailer.smtp_settings = {
+    address: ENV['ACTION_MAILER_SMTP_ADDRESS'],
+    port: 587, # Port 25 is throttled on AWS
+    user_name: ENV['ACTION_MAILER_SMTP_USER_NAME'],
+    password: ENV['ACTION_MAILER_SMTP_PASSWORD'],
+    authentication: :login,
+    enable_starttls_auto: true
+  }
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -109,4 +123,6 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+
 end

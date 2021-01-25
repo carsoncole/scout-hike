@@ -148,3 +148,17 @@ footer {
   letter-spacing: 0.04em;
 
 }
+
+#error_explanation {
+  padding: 1em 1.5em 0.5em 1.5em;
+  background-color: #ddd;
+  margin: 1em 0;
+  color: #f00;
+  .message {
+    font-size: 1.2em;
+  }
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
