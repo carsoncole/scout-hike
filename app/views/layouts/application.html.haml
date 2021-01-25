@@ -1,13 +1,6 @@
 !!!
 %html
-  %head
-    %title Hike
-    = csrf_meta_tags
-    = csp_meta_tag
-    %meta(name="viewport" content="width=device-width, initial-scale=1")
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-    %script(src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-mutate-approach="sync")
+  = render 'head'
   %body
     %nav.navbar.navbar-expand-lg.navbar-dark#main-nav(style='background-color: #003F87')
       = link_to root_path, class: 'navbar-brand' do
