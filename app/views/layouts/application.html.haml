@@ -11,19 +11,19 @@
   %body
     %nav.navbar.navbar-expand-lg.navbar-dark#main-nav(style='background-color: #003F87')
       = link_to root_path, class: 'navbar-brand' do
-        = image_tag "hike-simple.png", width: '40'
+        = image_tag "hike-simple.png", width: '40', class: 'img-fluid'
       %button.navbar-toggler(type='button' data-toggle="collapse" data-target="#navbarNav")
         %span.navbar-toggler-icon
       %div.collapse.navbar-collapse#navbarNav
         %ul.navbar-nav.mr-auto
           %li.nav-item
-            = link_to "Home", root_path, class: 'nav-link'
+            = link_to "Leaderboard", root_path, class: 'nav-link'
           %li.nav-item
             = link_to "About", about_path, class: 'nav-link'
         .navbar-nav.mr-0
           .nav-item
             - if signed_in?
-              .nav-link= link_to current_user.screenname, edit_user_path(current_user)
+              .nav-link= link_to current_user.screenname, edit_user_path(current_user), class: 'screenname'
             - else
               = link_to "Sign in", sign_in_path, class: 'nav-link'
           - if signed_in?
@@ -34,8 +34,4 @@
 
       = yield
 
-    - unless action_name == 'about'
-      .container
-        %footer
-          .text-center
-            = link_to "About", about_path
+    = render 'footer'

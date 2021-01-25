@@ -108,6 +108,9 @@ nav.navbar {
       color: rgba(255,255,255,0.75);
     }
   }
+  .screenname {
+    font-weight: 900;
+  }
 }
 
 footer {
@@ -137,7 +140,7 @@ footer {
   .emphasis {
     display: inline-block;
     background-color: #CE1126;
-    padding: 0.5em 1em;
+    padding: 0.3em 1em;
     margin-left: 1.5em;
     margin-right: 1.3em;
     color: #fff;
