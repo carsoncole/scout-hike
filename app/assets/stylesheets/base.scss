@@ -87,3 +87,45 @@ h1 {
   margin-bottom: 2em;
 }
 
+
+nav.navbar {
+  a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    &:hover {
+      color: rgba(255,255,255,0.75);
+    }
+  }
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #999999;
+  a {
+    display: inline-block;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
+
+#about {
+  line-height: 2.23;
+  margin-top: 5rem;
+  .main-logo {
+    margin-bottom: 4rem;
+  }
+  font-size: 1.3rem;
+
+  .emphasis {
+    display: inline-block;
+    background-color: #CE1126;
+    padding: 0.5em 1em;
+    margin-left: 1.5em;
+    margin-right: 1.3em;
+    color: #fff;
+  }
+  letter-spacing: 0.04em;
+
+}

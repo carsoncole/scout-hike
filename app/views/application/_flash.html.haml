@@ -1,0 +1,4 @@
+- flash.each do |key, value|
+  .alert.alert-info
+    %div(class="flash #{ key }")
+      = value.html_safe

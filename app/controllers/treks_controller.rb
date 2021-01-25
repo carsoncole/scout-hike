@@ -5,7 +5,7 @@ class TreksController < ApplicationController
   # GET /treks
   # GET /treks.json
   def index
-    @treks = Trek.all
+    @treks = current_user.treks
   end
 
   # GET /treks/1
