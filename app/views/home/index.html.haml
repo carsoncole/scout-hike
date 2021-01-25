@@ -2,25 +2,33 @@
   .text-center= image_tag 'hike.png', width: '450px', class: 'main-logo'
 
   .row
-    .col-3
-    .col-6
+    .col-2
+    .col-8
       %h2 Leaderboard
 
-      - @ranked_users.each do |user|
-        
-        .rank
-          - if user == current_user
-            .screenname= link_to user.screenname, user_treks_path(user)
-          - else
-            .screenname= user.screenname
-          .troop= user.unit.name
-          .legend miles
-          .miles= user.miles_count
+      - count = 0
+      %table.table.table-striped.table-dark#rank-table
+        - @ranked_users.each do |user|
+          %tr{class: user == current_user ? 'you' : nil}
+            - count += 1
+            %td.count= count
+            - if user == current_user
+              %td
+                .screenname= link_to 'You', user_treks_path(user)
+                .troop= user.unit.name
+            - else
+              %td
+                .screenname= user.screenname
+                .troop= user.unit.name
+            %td.text-right
+              .miles
+              = user.miles_count
+              .legend miles
 
 
   .action
     - if signed_in?
-      = button_to "Log a Hike", new_trek_path, method: :get, class: 'btn btn-lg btn-info'
+      = button_to "Log a Hike", new_trek_path, method: :get, class: 'btn btn-lg btn-secondary'
     - else
       = button_to "Register", sign_up_path, method: :get, class: 'btn btn-lg btn-primary'
 

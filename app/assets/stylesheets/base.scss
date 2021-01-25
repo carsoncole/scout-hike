@@ -26,36 +26,48 @@ nav.navbar {
     text-align: center;
     margin-top: 2rem;
   }
-  .rank {
+
+  table.table#rank-table {
+    th,td {
+      padding: 1em 1.5em;
+      border: none;
+      font-size: 1.3rem;
+    }
     width: 100%;
-    display: inline-block;
+    tr.you {
+      font-weight: 900 !important;
+    }
+    .count {
+      width: 6rem;
+      border-right: 3px solid #bbb;
+      text-align: center;
+      vertical-align: middle;
+    }
     .screenname {
       vertical-align: bottom;
-      font-size: 1.5rem;
-      float: left;
-      font-weight: 900;
+      font-size: 1.5em;
+      display: inline-block;
+      font-weight: 400;
       letter-spacing: 0.05em;
+      line-height: 1;
+      padding: 0;
     }
     .troop {
-      float: left;
-      margin-left: 0.4rem;
-      font-size: 0.7rem;
+      font-size: 0.7em;
       font-weight: 100;
-      margin-top: 1rem;
+      vertical-align: bottom;
+      display: inline-block;
     }
     .miles {
-      float: right;
       text-align: right;
-      font-size: 1.5rem;
+      font-size: 1.5em;
       font-weight: 900;
     }
     .legend {
-      float: right;
-      margin-left: 0.4rem;
+      display: inline-block;
       margin-right: 0;
-      font-size: 0.7rem;
+      font-size: 0.7em;
       font-weight: 100;
-      margin-top: 1rem;
     }
   }
 }
@@ -107,6 +119,10 @@ footer {
     display: inline-block;
     margin-right: 2rem;
     margin-left: 2rem;
+    color: #000;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
