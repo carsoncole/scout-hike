@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title Hike
+    = csrf_meta_tags
+    = csp_meta_tag
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script(src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-mutate-approach="sync")
+  %body
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light#main-nav
+      = link_to root_path, class: 'navbar-brand' do
+        = image_tag "hike-simple.png", width: '40'
+      %button.navbar-toggler(type='button' data-toggle="collapse" data-target="#navbarNav")
+        %span.navbar-toggler-icon
+      %div.collapse.navbar-collapse#navbarNav
+        %ul.navbar-nav.mr-auto
+          %li.nav-item
+            - if signed_in?
+              .nav-link= current_user.screenname
+            - else
+              = link_to "Sign in", sign_in_path, class: 'nav-link'
+          - if signed_in?
+            %li.nav-item
+              = link_to "Sign out", sign_out_path, method: :delete, class: 'nav-link'
+    .container
+      = yield

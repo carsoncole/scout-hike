@@ -1,0 +1,88 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+nav.navbar {
+  margin-bottom: 2rem;
+}
+
+#home {
+  .main-logo {
+    margin: 2rem auto 3rem auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.7rem;
+    letter-spacing: 0.1rem;
+    border-top: 2px solid #ccc;
+    padding-top: 0.5em;
+    font-weight: 900;
+    color: #999;
+  }
+  .action {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .rank {
+    width: 100%;
+    display: inline-block;
+    .screenname {
+      vertical-align: bottom;
+      font-size: 1.5rem;
+      float: left;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+    .troop {
+      float: left;
+      margin-left: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 100;
+      margin-top: 1rem;
+    }
+    .miles {
+      float: right;
+      text-align: right;
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+    .legend {
+      float: right;
+      margin-left: 0.4rem;
+      margin-right: 0;
+      font-size: 0.7rem;
+      font-weight: 100;
+      margin-top: 1rem;
+    }
+  }
+}
+
+#treks {
+  #treks-table {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    .miles {
+      font-weight: 900;
+    }
+  }
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+  .legend {
+    font-size: 0.7em;
+    font-weight: 100;
+    display: inline-block;
+    margin-left: 0.3em;
+  }
+  .total-miles {
+    font-weight: 900;
+    font-size: 2rem;
+  }
+}
+
+h1 {
+  margin-bottom: 2em;
+}
+

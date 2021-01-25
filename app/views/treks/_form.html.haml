@@ -1,0 +1,18 @@
+= form_for @trek do |f|
+  - if @trek.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@trek.errors.count, "error")} prohibited this trek from being saved:"
+      %ul
+        - @trek.errors.full_messages.each do |message|
+          %li= message
+  .form-group
+    = f.label :date
+    = f.date_select :date, class: 'form-control'
+  .row
+    .col-4
+      .form-group
+        = f.label :distance_in_miles
+        = f.number_field :distance_in_miles, step: 0.1, class: 'form-control'
+  %br
+  .actions
+    = f.submit 'Save', class: 'btn btn-lg btn-primary'

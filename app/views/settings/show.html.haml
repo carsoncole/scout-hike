@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Start date:
+  = @setting.start_date
+%p
+  %b End date:
+  = @setting.end_date
+
+= link_to 'Edit', edit_setting_path(@setting)
+\|
+= link_to 'Back', settings_path

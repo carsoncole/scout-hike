@@ -1,0 +1,27 @@
+#treks
+  .row
+    .col-6
+      %h1 My treks
+
+      .total-miles
+        = current_user.miles_count
+        .legend Total miles
+
+      %table.table#treks-table
+        %thead
+          %tr
+            %th Date
+            %th.text-right Distance in miles
+            %th
+
+        %tbody
+          - @treks.each do |trek|
+            %tr
+              %td= nice_date(trek.date)
+              %td.text-right.miles= trek.distance_in_miles
+              %td.text-right
+                = link_to 'Edit', edit_trek_path(trek)
+                \|
+                = link_to 'Destroy', trek, method: :delete, data: { confirm: 'Are you sure?' }
+
+      = button_to 'New Trek', new_trek_path, method: :get, class: 'btn btn-lg btn-primary'

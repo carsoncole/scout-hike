@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @trek.user
+%p
+  %b Date:
+  = @trek.date
+%p
+  %b Distance in miles:
+  = @trek.distance_in_miles
+
+= link_to 'Edit', edit_trek_path(@trek)
+\|
+= link_to 'Back', treks_path

@@ -1,0 +1,29 @@
+#home
+  .text-center= image_tag 'hike.png', width: '450px', class: 'main-logo'
+
+  .row
+    .col-3
+    .col-6
+      %h2 Leaderboard
+
+      - @ranked_users.each do |user|
+        
+        .rank
+          - if user == current_user
+            .screenname= link_to user.screenname, user_treks_path(user)
+          - else
+            .screenname= user.screenname
+          .troop= user.unit.name
+          .legend miles
+          .miles= user.miles_count
+
+
+  .action
+    - if signed_in?
+      = button_to "Log a Hike", new_trek_path, method: :get, class: 'btn btn-lg btn-info'
+    - else
+      = button_to "Register", sign_up_path, method: :get, class: 'btn btn-lg btn-primary'
+
+
+
+

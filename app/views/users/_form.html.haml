@@ -1,0 +1,16 @@
+.form-group
+  = form.label :screenname
+  = form.text_field :screenname, class: 'form-control'
+
+.form-group
+  = form.label :unit
+  = form.collection_select :unit_id, Unit.all, :id, :name, { prompt: 'Select your Unit'} , {class: 'form-control'}
+
+.form-group
+  = form.label :email
+  / %small.text-muted Optional. For Leaderboard updates, password resets.
+  = form.text_field :email, type: 'email', class: 'form-control'
+
+.form-group
+  = form.label :password
+  = form.password_field :password, class: 'form-control'
