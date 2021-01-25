@@ -2,7 +2,7 @@
 %html
   = render 'head'
   %body
-    %nav.navbar.navbar-expand-lg.navbar-dark#main-nav(style='background-color: #003F87')
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark#main-nav
       = link_to root_path, class: 'navbar-brand' do
         = image_tag "hike-simple.png", width: '40', class: 'img-fluid'
       %button.navbar-toggler(type='button' data-toggle="collapse" data-target="#navbarNav")
@@ -26,5 +26,3 @@
       = render 'flash'
 
       = yield
-
-    = render 'footer'

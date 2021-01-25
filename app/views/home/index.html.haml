@@ -1,13 +1,16 @@
 #home
-  .text-center= image_tag 'hike.png', width: '450px', class: 'main-logo img-fluid'
+  .text-center= image_tag 'hike-v3.png', width: '400px', class: 'main-logo img-fluid'
 
   .row
     .col-lg-2
     .col-lg-8
-      %h2 Leaderboard
 
       - count = 0
-      %table.table.table-striped.table-dark#rank-table
+      %table.table.table-striped.table-dark#rank-table.rounded
+        %tr
+          %th.count= fa_icon 'chart-bar'
+          %th Hiker
+          %th.text-right= fa_icon 'map-marker'
         - @ranked_users.each do |user|
           %tr{class: user == current_user ? 'you' : nil}
             - count += 1
@@ -41,7 +44,7 @@
     - if signed_in?
       = button_to "Log a Hike", new_trek_path, method: :get, class: 'btn btn-lg btn-secondary'
     - else
-      = button_to "Sign Up", sign_up_path, method: :get, class: 'btn btn-lg btn-primary'
+      = button_to "Sign Up", sign_up_path, method: :get, class: 'btn btn-lg btn-secondary'
       %br
       = link_to "Sign In", sign_in_path, method: :get
 
