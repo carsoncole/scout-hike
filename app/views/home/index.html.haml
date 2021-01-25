@@ -24,7 +24,8 @@
               .miles
               = user.miles_count
               .legend miles
-        - unless @ranked_users.include? current_user
+        
+        - if signed_in? && !@ranked_users.include?(current_user)
           %tr.you
             %td.count= @all_users.index(current_user) + 1
             %td
