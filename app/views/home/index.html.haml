@@ -24,6 +24,16 @@
               .miles
               = user.miles_count
               .legend miles
+        - unless @ranked_users.include? current_user
+          %tr.you
+            %td.count= @all_users.index(current_user) + 1
+            %td
+              .screenname= link_to 'You', user_treks_path(current_user)
+              .troop= current_user.unit.name
+            %td.text-right
+              .miles
+              = current_user.miles_count
+              .legend miles
 
 
   .action
