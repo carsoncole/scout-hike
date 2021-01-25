@@ -6,38 +6,46 @@
     .col-lg-8
 
       - count = 0
-      %table.table.table-striped.table-dark#rank-table.rounded
-        %tr
-          %th.count= fa_icon 'chart-bar'
-          %th Hiker
-          %th.text-right= fa_icon 'map-marker'
-        - @ranked_users.each do |user|
-          %tr{class: user == current_user ? 'you' : nil}
-            - count += 1
-            %td.count= count
-            - if user == current_user
+      #table-nav
+        %ul.nav.nav-tabs
+          %li.nav-item
+            = link_to root_path, class: "nav-link #{action_name == 'about' ? nil : 'active'}" do
+              = fa_icon 'chart-bar'
+          %li.nav-item
+            = link_to about_path, class: "nav-link #{action_name == 'about' ? 'active' : nil}" do
+              = fa_icon 'info'
+        %table.table.table-striped.table-dark#rank-table.rounded
+          %tr
+            %th.count= fa_icon 'chart-bar'
+            %th Hiker
+            %th.text-right= fa_icon 'map-marker'
+          - @ranked_users.each do |user|
+            %tr{class: user == current_user ? 'you' : nil}
+              - count += 1
+              %td.count= count
+              - if user == current_user
+                %td
+                  .screenname= link_to 'You', user_treks_path(user)
+                  .troop= user.unit.name
+              - else
+                %td
+                  .screenname= user.screenname
+                  .troop= user.unit.name
+              %td.text-right
+                .miles
+                = user.miles_count
+                .legend miles
+          
+          - if signed_in? && !@ranked_users.include?(current_user)
+            %tr.you
+              %td.count= @all_users.index(current_user) + 1
               %td
-                .screenname= link_to 'You', user_treks_path(user)
-                .troop= user.unit.name
-            - else
-              %td
-                .screenname= user.screenname
-                .troop= user.unit.name
-            %td.text-right
-              .miles
-              = user.miles_count
-              .legend miles
-        
-        - if signed_in? && !@ranked_users.include?(current_user)
-          %tr.you
-            %td.count= @all_users.index(current_user) + 1
-            %td
-              .screenname= link_to 'You', user_treks_path(current_user)
-              .troop= current_user.unit.name
-            %td.text-right
-              .miles
-              = current_user.miles_count
-              .legend miles
+                .screenname= link_to 'You', user_treks_path(current_user)
+                .troop= current_user.unit.name
+              %td.text-right
+                .miles
+                = current_user.miles_count
+                .legend miles
 
 
   .action

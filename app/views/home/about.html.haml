@@ -1,11 +1,19 @@
-#about
-  .text-center= image_tag 'hike-v3.png', width: '450px', class: 'main-logo img-fluid'
+#home
+  .text-center= image_tag 'hike-v3.png', width: '400px', class: 'main-logo img-fluid'
 
   .row
-    .col-md-2
-    .col-md-8
+    .col-lg-2
+    .col-lg-8
 
-      %p 
+      #table-nav
+        %ul.nav.nav-tabs
+          %li.nav-item
+            = link_to root_path, class: 'nav-link' do
+              = fa_icon 'chart-bar'
+          %li.nav-item
+            = link_to about_path, class: 'nav-link active' do
+              = fa_icon 'info'
+      .about
         A Scout pledges to keep themself physically strong, and mentally awake, so let's hike! And we'll make it more fun by doing it at night.
 
         .emphasis The goal is to hike a total of 10 miles in February.

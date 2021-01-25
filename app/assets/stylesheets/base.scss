@@ -22,36 +22,51 @@ a {
 
 #home {
   .main-logo {
-    margin: 1rem auto 2rem auto;
+    margin: 1rem auto 1.5rem auto;
   }
 
-  h2 {
-    text-align: center;
-    font-size: 2.7rem;
-    letter-spacing: 0.1rem;
-
-    padding-top: 0.5em;
-    padding-bottom: 1em;
-    font-weight: 900;
-    color: #999;
+  #table-nav {
+    font-size: 1.3rem;
   }
+
   .action {
     text-align: center;
     margin-top: 2rem;
+  }
+
+  .about {
+    font-size: 1.2rem;
+    padding: 4em 2em;
+    line-height: 2.5;
+    background-color: rgb(52,58,64);
+    .emphasis {
+      display: inline-block;
+      background-color: #CE1126;
+      padding: 0.3em 1em;
+      margin-left: 1.1em;
+      margin-right: 1em;
+      color: #fff;
+    }
+  }
+  letter-spacing: 0.04em;
+
+  .nav-link {
+    border: 1px solid #999 !important;
+    padding: 0.7rem 3.5rem;
+    &.active {
+      background-color: rgb(52,58,64);
+    }
   }
 
   table.table#rank-table {
     th {
       padding: 1em 1.5em;
       border: none;
-      font-size: 1.5rem;
     }
     td {
       padding: 1em 1.5em;
       border: none;
-      font-size: 1.3rem;
     }
-    width: 100%;
     tr.you {
       font-weight: 900 !important;
     }
