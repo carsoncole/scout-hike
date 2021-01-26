@@ -60,6 +60,8 @@ a {
 }
 
 #user-table {
+  font-size: 1.4rem;
+  font-weight: 400;
   th {
     padding: 1em 1.5em;
     border: none;
@@ -80,7 +82,7 @@ a {
   .screenname {
     vertical-align: middle;
     display: inline-block;
-    font-weight: 400;
+
     font-size: 1.1em;
     letter-spacing: 0.05em;
     line-height: 1;
