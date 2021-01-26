@@ -1,0 +1,11 @@
+#primary-nav
+  %ul.nav.nav-tabs
+    %li.nav-item
+      = link_to root_path, class: "nav-link #{ action_name == 'index' && controller_name == 'home' ? 'active' : nil }" do
+        = fa_icon 'chart-bar'
+    %li.nav-item
+      = link_to about_path, class: "nav-link #{ action_name == 'about' ? 'active' : nil }" do
+        = fa_icon 'info'
+    %li.nav-item
+      = link_to users_path, class: "nav-link #{ action_name == 'index' && controller_name == 'users' ? 'active' : nil } " do
+        = fa_icon 'users'
