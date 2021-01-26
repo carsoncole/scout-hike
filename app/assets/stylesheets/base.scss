@@ -24,94 +24,87 @@ a {
   display: inline-block;
 }
 
-#home {
+#masthead {
   .main-logo {
     margin: 1rem auto 1.5rem auto;
   }
+}
 
+#main-nav {
+  .nav-link {
+  border: 1px solid #999 !important;
+  padding: 0.7rem 3.5rem;
+  &.active {
+    background-color: rgb(52,58,64);
+  }
+}
+}
+
+#actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#countdown {
+  margin: 1em auto;
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+#home {
   #table-nav {
     font-size: 1.3rem;
   }
-
-  .action {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .about {
-    font-size: 1.2rem;
-    padding: 4em 2em;
-    line-height: 2.5;
-    background-color: rgb(52,58,64);
-    .emphasis {
-      display: inline-block;
-      background-color: #CE1126;
-      padding: 0.3em 1em;
-      margin-left: 1.1em;
-      margin-right: 1em;
-      color: #fff;
-    }
-  }
   letter-spacing: 0.04em;
+}
 
-  .nav-link {
-    border: 1px solid #999 !important;
-    padding: 0.7rem 3.5rem;
-    &.active {
-      background-color: rgb(52,58,64);
-    }
+#user-table {
+  th {
+    padding: 1em 1.5em;
+    border: none;
   }
-
-  table.table#rank-table {
-    th {
-      padding: 1em 1.5em;
-      border: none;
-    }
-    td {
-      padding: 1em 1.5em;
-      border: none;
-    }
-    tr.you {
-      font-weight: 900 !important;
-    }
-    .count {
-      width: 6rem;
-      border-right: 3px solid #bbb;
-      text-align: center;
-      vertical-align: middle;
-    }
-    .screenname {
-      vertical-align: middle;
-      display: inline-block;
-      font-weight: 400;
-      font-size: 1.1em;
-      letter-spacing: 0.05em;
-      line-height: 1;
-    }
-    .troop {
-      font-size: 0.7em;
-      font-weight: 100;
-      vertical-align: bottom;
-      display: inline-block;
-    }
-    .miles {
-      text-align: right;
-      font-size: 1.5em;
-      font-weight: 900;
-    }
-    .legend {
-      display: inline-block;
-      margin-right: 0;
-      font-size: 0.7em;
-      font-weight: 100;
-    }
+  td {
+    padding: 1em 1.5em;
+    border: none;
   }
-  .countdown {
-    margin: 2em auto 3em auto;
+  tr.you {
+    font-weight: 900 !important;
+  }
+  .count {
+    width: 6rem;
+    border-right: 3px solid #bbb;
     text-align: center;
+    vertical-align: middle;
+  }
+  .screenname {
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  .troop {
+    font-size: 0.7em;
+    font-weight: 100;
+    vertical-align: bottom;
+    display: inline-block;
+  }
+  .miles {
+    text-align: right;
+    font-size: 1.5em;
     font-weight: 900;
   }
+  .legend {
+    display: inline-block;
+    margin-right: 0;
+    font-size: 0.7em;
+    font-weight: 100;
+  }
 }
+
+
 
 #treks {
   #treks-table {
@@ -172,12 +165,10 @@ footer {
 
 #about {
   line-height: 2.23;
-  margin-top: 5rem;
-  .main-logo {
-    margin-bottom: 4rem;
-  }
   font-size: 1.3rem;
-
+  padding: 3em;
+  line-height: 2.5;
+  background-color: rgb(52,58,64);
   .emphasis {
     display: inline-block;
     background-color: #CE1126;
@@ -187,7 +178,6 @@ footer {
     color: #fff;
   }
   letter-spacing: 0.04em;
-
 }
 
 #error_explanation {

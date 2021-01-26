@@ -1,0 +1,14 @@
+%tr{class: user == current_user ? 'you' : nil}
+  %td.count= @users.index(user) + 1
+  - if user == current_user
+    %td
+      .screenname= link_to 'You', user_treks_path(user)
+      .troop= user.unit.name
+  - else
+    %td
+      .screenname= user.screenname
+      .troop= user.unit.name
+  %td.text-right
+    .miles
+    = user.miles_count
+    .legend miles

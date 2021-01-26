@@ -1,7 +1,9 @@
-.action
-  %span.btn-group
-    - if signed_in?
-      = link_to "Log a Hike", new_trek_path, method: :get, class: 'btn btn-lg btn-secondary'
-    - else
-      = link_to "Sign Up", sign_up_path, method: :get, class: 'btn btn-lg btn-secondary'
-      = link_to "Sign In", sign_in_path, method: :get, class: 'btn btn-lg btn-secondary'
+.row
+  .col-md-5.mx-auto
+    #actions
+      %span.btn-group
+        - if signed_in?
+          = link_to "Log a Hike", new_trek_path, method: :get, class: 'btn btn-lg btn-secondary'
+        - else
+          = link_to "Sign Up", sign_up_path, method: :get, class: 'btn btn-lg btn-secondary'
+          = link_to "Sign In", sign_in_path, method: :get, class: 'btn btn-lg btn-secondary'

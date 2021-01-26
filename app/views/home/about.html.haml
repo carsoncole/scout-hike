@@ -1,23 +1,15 @@
-#home
-  .text-center= image_tag 'hike-v3.png', width: '400px', class: 'main-logo img-fluid'
+= render 'masthead'
 
-  .row
-    .col-lg-2
-    .col-lg-8
+= render 'main_nav'
 
-      #table-nav
-        %ul.nav.nav-tabs
-          %li.nav-item
-            = link_to root_path, class: 'nav-link' do
-              = fa_icon 'chart-bar'
-          %li.nav-item
-            = link_to about_path, class: 'nav-link active' do
-              = fa_icon 'info'
-      .about
-        A Scout pledges to keep themself physically strong, and mentally awake, so let's hike! And we'll make it more fun by doing it at night.
+#about
 
-        .emphasis The goal is to hike a total of 10 miles in February.
+  .about
+    A Scout pledges to keep themself physically strong, and mentally awake, so let's hike! And we'll make it more fun by doing it at night.
 
-        Go out between the hours of 5-11pm, take a flashlight, and walk with a sibling or parent. Once you return, log it here so you can track your progress.
+    .emphasis The goal is to hike a total of 10 miles in February.
 
-  = render 'take_action'
+    Go out between the hours of 5-11pm, take a flashlight, and walk with a sibling or parent. Once you return, log it here so you can track your progress.
+
+
+= render 'take_action'

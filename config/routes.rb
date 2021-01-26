@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   resources :treks
 
-  resources :users, controller: 'users', only: %i[edit create show update]
+  resources :users, controller: 'users', only: %i[index edit create update]
 
   get 'about' => "home#about", as: 'about'
   get 'instructions' => "home#instructions", as: 'instructions'

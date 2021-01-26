@@ -1,0 +1,10 @@
+.row
+  .col-md-12
+    %table.table.table-striped.table-dark#user-table.rounded
+      %tr
+        %th.count= fa_icon 'chart-bar'
+        %th Hiker
+        %th.text-right= fa_icon 'map-marker'
+
+
+      = render partial: 'users/user', collection: @users
