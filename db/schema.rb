@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_203946) do
+ActiveRecord::Schema.define(version: 2021_01_26_163610) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "settings", force: :cascade do |t|
     t.date "start_date"
@@ -20,11 +23,12 @@ ActiveRecord::Schema.define(version: 2021_01_24_203946) do
   end
 
   create_table "treks", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.date "date"
-    t.decimal "distance_in_miles", precision: 2, scale: 5
+    t.decimal "distance_in_miles", precision: 5, scale: 2, default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["date"], name: "index_treks_on_date"
     t.index ["user_id"], name: "index_treks_on_user_id"
   end
 
@@ -40,11 +44,12 @@ ActiveRecord::Schema.define(version: 2021_01_24_203946) do
     t.string "email", null: false
     t.integer "unit_id"
     t.string "screenname", null: false
-    t.decimal "miles_count", precision: 2, scale: 5, default: "0.0"
+    t.decimal "miles_count", precision: 5, scale: 2, default: "0.0"
     t.string "encrypted_password", limit: 128, null: false
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
     t.index ["email"], name: "index_users_on_email"
+    t.index ["miles_count"], name: "index_users_on_miles_count"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 

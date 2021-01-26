@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class TreksTest < ApplicationSystemTestCase
   setup do
-    @trek = treks(:one)
+    @trek = create(:trek)
   end
 
   test "visiting the index" do

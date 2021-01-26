@@ -47,6 +47,14 @@
                 = current_user.miles_count
                 .legend miles
 
+        - if Setting.start_date
+          .countdown
+            - if Setting.start_date > Date.today
+              Challenge starts in
+              = distance_of_time_in_words(Date.today, Setting.start_date)
+            - else
+              Challenge ends in
+              = distance_of_time_in_words(Setting.start_date, Setting.end_date)
 
   = render 'take_action'
 
