@@ -16,6 +16,7 @@ class TreksController < ApplicationController
   # GET /treks/new
   def new
     @trek = current_user.treks.new
+    flash[:notice] = "Ooops! Hikes can only be entered during the Challenge." unless Setting.active?
   end
 
   # GET /treks/1/edit

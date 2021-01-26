@@ -7,12 +7,13 @@
           %li= message
   .form-group
     = f.label :date
-    = f.date_select :date, class: 'form-control'
+    = f.date_select :date, disabled: Setting.active? ? false : true, class: 'form-control'
   .row
     .col-4
       .form-group
         = f.label :distance_in_miles
-        = f.number_field :distance_in_miles, step: 0.1, class: 'form-control'
+        = f.number_field :distance_in_miles, step: 0.1, disabled: Setting.active? ? false : true, class: 'form-control'
   %br
   .actions
-    = f.submit 'Save', class: 'btn btn-lg btn-primary'
+    = f.submit 'Save', disabled: Setting.active? ? false : true, class: 'btn btn-lg btn-primary'
+  %br
