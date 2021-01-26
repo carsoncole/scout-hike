@@ -12,7 +12,10 @@
 
 .form-group
   = form.label :unit
-  = form.collection_select :unit_id, Unit.all, :id, :name, { prompt: 'Select your Unit'} , {class: 'form-control'}
+  - if Unit.count == 1
+    = form.collection_select :unit_id, Unit.all, :id, :name, {class: 'form-control'}
+  - else
+    = form.collection_select :unit_id, Unit.all, :id, :name, { prompt: 'Select your Unit'} , {class: 'form-control'}
 
 .form-group
   = form.label :email

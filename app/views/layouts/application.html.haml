@@ -4,9 +4,10 @@
   %body
     = render 'main_nav'
     .container
-      .row
-        .col-md-1
-        .col-md-10
-          = render 'flash'
+      #body
+        .row
+          .col-md-1
+          .col-md-10
+            = render 'flash'
 
-          = yield
+            = yield

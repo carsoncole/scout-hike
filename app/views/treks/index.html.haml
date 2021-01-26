@@ -1,10 +1,10 @@
 #treks
   .row
     .col-6
-      %h1 My treks
+      %h1 My hikes
 
       .total-miles
-        = current_user.miles_count
+        #total-miles= current_user.miles_count
         .legend Total miles
 
       %table.table#treks-table
@@ -24,4 +24,4 @@
                 \|
                 = link_to 'Destroy', trek, method: :delete, data: { confirm: 'Are you sure?' }
 
-      = button_to 'New Trek', new_trek_path, method: :get, class: 'btn btn-lg btn-primary'
+      = button_to 'New Hike', new_trek_path, method: :get, class: 'btn btn-lg btn-primary'
