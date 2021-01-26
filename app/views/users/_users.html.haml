@@ -4,7 +4,8 @@
       %tr
         %th.count= fa_icon 'chart-bar'
         %th Hiker
-        %th.text-right= fa_icon 'map-marker'
+        %th.distance= fa_icon 'map-marker'
+        %td.progress-status
 
 
       = render partial: 'users/user', collection: @users

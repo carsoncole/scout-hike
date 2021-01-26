@@ -1,10 +1,10 @@
-- if Setting.start_date
+- if Unit.first.start_date
   .row
     .col-md-12
       #countdown
-        - if Setting.start_date > Date.today
+        - if Unit.first.start_date > Date.today
           Challenge starts in
-          = distance_of_time_in_words(Date.today, Setting.start_date)
+          = distance_of_time_in_words(Date.today, Unit.first.start_date)
         - else
           Challenge ends in
-          = distance_of_time_in_words(Setting.start_date, Setting.end_date)
+          = distance_of_time_in_words(Unit.first.start_date, Unit.first.end_date)

@@ -66,9 +66,22 @@ a {
     padding: 1em 1.5em;
     border: none;
   }
+  th, td {
+    &.distance {
+      width: 10rem;
+      padding-right: 0.5em;
+      text-align: right;
+    }
+    &.progress-status {
+      width: 7rem;
+      padding: 0 0.5em;
+      vertical-align: middle;
+    }
+  }
   td {
     padding: 1em 1.5em;
     border: none;
+
   }
   tr.you {
     font-weight: 900 !important;

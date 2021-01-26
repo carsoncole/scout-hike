@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Unit.create(name: 'Troop 1564')
-Unit.create(name: 'Troop 1804')
+Unit.create(name: 'Troop 1564', start_date: Date.today - 1.days, end_date: Date.today + 25.days, miles_goal: 10)
+Unit.create(name: 'Troop 1804', start_date: Date.today - 1.days, end_date: Date.today + 25.days, miles_goal: 10)

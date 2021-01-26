@@ -8,7 +8,10 @@
     %td
       .screenname= user.screenname
       .troop= user.unit.name
-  %td.text-right
+  %td.distance
     .miles
     = user.miles_count
     .legend miles
+  %td.progress-status
+    .progress(style="height: 20px;")
+      .progress-bar.bg-secondary(role="progressbar" style="width: #{user.miles_count / Unit.first.miles_goal * 100}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")

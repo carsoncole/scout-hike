@@ -26,7 +26,6 @@ class TreksTest < ApplicationSystemTestCase
 
   test "creating a Trek" do
     sign_in
-    create(:active_setting)
     trek = build(:trek)
     visit root_path
     click_on 'You'
