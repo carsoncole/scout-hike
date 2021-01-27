@@ -8,11 +8,11 @@ Carson Cole
 
 ## Requirements
 
-Ruby 2.7.1, Rails 6.0
+Ruby 2.7.1, Rails 6.0, PosgreSQL
 
 ## Installation
 
-This app has been configured to work easily in Heroku, utilizing their default PosgeSQL. In development, any database can be substituted, but it has been configured for PosgreSQL
+This is a Ruby on Rails 6.0 application. It has been tested and easily deployed on Heroku, configured using PosgreSQL for the database.
 
 ## Updates Required
 
