@@ -45,16 +45,16 @@ a {
 
 #masthead {
   .main-logo {
-    margin: 0rem auto 0.5rem auto;
+    margin: 0rem auto 1rem auto;
   }
-  .main-logo {
-    margin: 0rem auto 0 auto;
+  .main-logo-small {
+    margin: 0rem auto 1rem auto;
   }
 }
 
 #actions {
   text-align: center;
-  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 #countdown {
@@ -72,6 +72,7 @@ a {
 }
 
 #user-table {
+  margin-top: 1.5rem;
   font-size: 1.4rem;
   font-weight: 400;
   th {
