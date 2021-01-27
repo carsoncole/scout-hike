@@ -2,10 +2,10 @@
   .row
     .col-md-12
       #countdown
-        - if nil #Unit.first.start_date > Date.today
+        - if Unit.first.start_date > Date.today
           Challenge starts in
           = distance_of_time_in_words(Date.today, Unit.first.start_date)
-        - elsif true #Unit.first.end_date > Date.today + 1.day
+        - elsif Unit.first.end_date > Date.today + 1.day
           Challenge ends in
           = distance_of_time_in_words(Unit.first.start_date, Unit.first.end_date)
         - else
