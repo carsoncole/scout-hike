@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
-nav.navbar {
-  margin-bottom: 2rem;
-}
-
 body {
   background-color: #454d55;
   color: #ffffff;
@@ -20,6 +15,30 @@ a {
   }
 }
 
+#main-nav {
+  margin-bottom: 2rem;
+  a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    &:hover {
+      color: rgba(255,255,255,0.75);
+    }
+  }
+  .screenname {
+    font-weight: 900;
+  }
+}
+
+#primary-nav {
+  .nav-link {
+    border: 1px solid #999 !important;
+    padding: 0.7rem 2.5rem;
+    &.active {
+      background-color: rgb(52,58,64);
+    }
+  }
+}
+
 .btn-group {
   display: inline-block;
 }
@@ -30,15 +49,7 @@ a {
   }
 }
 
-#primary-nav {
-  .nav-link {
-  border: 1px solid #999 !important;
-  padding: 0.7rem 3.5rem;
-  &.active {
-    background-color: rgb(52,58,64);
-  }
-}
-}
+
 
 #actions {
   text-align: center;
@@ -148,20 +159,6 @@ h1 {
   margin-bottom: 2em;
 }
 
-
-nav.navbar {
-  a {
-    text-decoration: none;
-    color: rgba(255,255,255,0.5);
-    &:hover {
-      color: rgba(255,255,255,0.75);
-    }
-  }
-  .screenname {
-    font-weight: 900;
-  }
-}
-
 footer {
   margin-top: 3rem;
   font-size: 0.95rem;
@@ -181,15 +178,15 @@ footer {
 #about {
   line-height: 2.23;
   font-size: 1.3rem;
-  padding: 3em;
+  padding: 3em 2em;
   line-height: 2.5;
   background-color: rgb(52,58,64);
   .emphasis {
     display: inline-block;
     background-color: #CE1126;
     padding: 0.3em 1em;
-    margin-left: 1.5em;
-    margin-right: 1.3em;
+    margin-left: 1em;
+    margin-right: 1em;
     color: #fff;
   }
   letter-spacing: 0.04em;
