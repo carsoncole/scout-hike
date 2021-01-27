@@ -45,11 +45,12 @@ a {
 
 #masthead {
   .main-logo {
-    margin: 1rem auto 1.5rem auto;
+    margin: 0rem auto 0.5rem auto;
+  }
+  .main-logo {
+    margin: 0rem auto 0 auto;
   }
 }
-
-
 
 #actions {
   text-align: center;
@@ -57,7 +58,7 @@ a {
 }
 
 #countdown {
-  margin: 1em auto;
+  margin-bottom: 1em;
   font-size: 1.4rem;
   text-align: center;
   font-weight: 900;
@@ -78,6 +79,7 @@ a {
     border: none;
   }
   th, td {
+    padding: 0.75em 1em;
     &.distance {
       width: 10rem;
       padding-right: 0.5em;
@@ -91,7 +93,6 @@ a {
     }
   }
   td {
-    padding: 1em 1.5em;
     border: none;
 
   }
