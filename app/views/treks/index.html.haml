@@ -1,27 +1,31 @@
 #treks
   .row
-    .col-6
+    .col-md-8
       %h1 My hikes
 
       .total-miles
         #total-miles= current_user.miles_count
         .legend Total miles
 
-      %table.table#treks-table
-        %thead
-          %tr
-            %th Date
-            %th.text-right Distance in miles
-            %th
-
-        %tbody
-          - @treks.each do |trek|
+      .table-responsive
+        %table.table#treks-table
+          %thead
             %tr
-              %td= nice_date(trek.date)
-              %td.text-right.miles= trek.distance_in_miles
-              %td.text-right
-                = link_to 'Edit', edit_trek_path(trek)
-                \|
-                = link_to 'Destroy', trek, method: :delete, data: { confirm: 'Are you sure?' }
+              %th.date Date
+              %th.miles Miles
+              %th.actions
+
+          %tbody
+            - @treks.each do |trek|
+              %tr
+                %td.date
+                  .d-none.d-lg-block= nice_date(trek.date)
+                  .d-block.d-lg-none= nice_compact_date(trek.date)
+                %td.miles= trek.distance_in_miles
+                %td.actions
+                  = link_to edit_trek_path(trek) do
+                    = fa_icon 'edit'
+                  = link_to trek, method: :delete, data: { confirm: 'Are you sure?' } do
+                    = fa_icon 'trash'
 
       = button_to 'New Hike', new_trek_path, method: :get, class: 'btn btn-lg btn-primary'

@@ -15,6 +15,10 @@ a {
   }
 }
 
+table.table {
+  color: #ffffff;
+}
+
 #main-nav {
   margin-bottom: 2rem;
   a {
@@ -142,6 +146,19 @@ a {
     .miles {
       font-weight: 900;
     }
+    th, td {
+      &.date {
+        width: 8rem;
+      }
+      &.miles {
+        width: 5em;
+        text-align: right;
+      }
+      &.actions {
+        width: 6em;
+        text-align: right;
+      } 
+    }
   }
   h1 {
     margin-bottom: 1.5rem;
@@ -149,10 +166,11 @@ a {
   .legend {
     font-size: 0.7em;
     font-weight: 100;
-    display: inline-block;
+    display: inline;
     margin-left: 0.3em;
   }
-  .total-miles {
+  #total-miles {
+    display: inline-block;
     font-weight: 900;
     font-size: 2rem;
   }

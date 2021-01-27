@@ -9,7 +9,7 @@
     = f.label :date
     = f.date_select :date, disabled: Unit.first.active? ? false : true, class: 'form-control'
   .row
-    .col-4
+    .col-md-4
       .form-group
         = f.label :distance_in_miles
         = f.number_field :distance_in_miles, step: 0.01, disabled: Unit.first.active? ? false : true, class: 'form-control'
