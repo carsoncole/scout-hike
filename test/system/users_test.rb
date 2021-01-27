@@ -22,6 +22,14 @@ class UsersTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'Sign up'
   end
 
+  test 'public pages' do
+    setup_unit_with_treks
+    visit '/'
+    click_on 'users-link'
+    click_on 'about-link'
+    click_on 'rank-link'
+  end
+
   test 'signing up' do
     visit root_url
     within '#main-nav' do

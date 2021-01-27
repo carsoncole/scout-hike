@@ -11,7 +11,14 @@ class ActiveSupport::TestCase
   parallelize(workers: 1)
 
   def setup
-    create(:unit)
+    @unit = create(:unit)
+  end
+
+  def setup_unit_with_treks
+    users = create_list(:user, 5, unit: @unit)
+    users.each do |u|
+      create_list(:trek, 5, user: u)
+    end
   end
 
   def sign_in(user = nil)
