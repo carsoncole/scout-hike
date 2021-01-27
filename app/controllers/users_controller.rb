@@ -2,7 +2,7 @@ class UsersController < Clearance::UsersController
   before_action :require_login, except: %i[index new create]
 
   def index
-    @users = User.all.order(:screenname)
+    @users = User.order("UPPER(screenname) ASC")
   end
 
   def edit

@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :screenname, presence: true
   validates :screenname, uniqueness: true
+
+  scope :ranked, -> { order(miles_count: :desc) }
 end
