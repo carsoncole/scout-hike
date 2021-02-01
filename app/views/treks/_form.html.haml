@@ -7,7 +7,7 @@
           %li= message
   .form-group
     = f.label :date
-    = f.date_select :date, disabled: Unit.first.active? ? false : true, class: 'form-control'
+    = f.date_select(:date, disabled: Unit.first.active? ? false : true, class: 'form-control')
   .row
     .col-md-4
       .form-group
