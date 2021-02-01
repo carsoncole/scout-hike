@@ -4,10 +4,10 @@
       #countdown
         - if Unit.first.start_date > Date.today
           Challenge starts in
-          = distance_of_time_in_words(Date.today, Unit.first.start_date)
+          = distance_of_time_in_words(Time.now - 8.hours, Unit.first.start_date)
         - elsif Unit.first.end_date > Date.today + 1.day
           Challenge ends in
-          = distance_of_time_in_words(Unit.first.start_date, Unit.first.end_date)
+          = distance_of_time_in_words(Time.now - 8.hours, Unit.first.end_date)
         - else
           Challenge ended on
           = nice_date(Unit.first.end_date)
