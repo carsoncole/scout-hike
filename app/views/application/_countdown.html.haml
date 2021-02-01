@@ -2,7 +2,7 @@
   .row
     .col-md-12
       #countdown
-        - if Unit.first.start_date > Date.today
+        - if Unit.first.start_date > Time.now - 8.hours
           Challenge starts in
           = distance_of_time_in_words(Time.now - 8.hours, Unit.first.start_date)
         - elsif Unit.first.end_date > Date.today + 1.day
